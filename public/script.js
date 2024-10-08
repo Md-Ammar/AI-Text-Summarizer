@@ -1,10 +1,13 @@
 const textArea = document.getElementById("text_to_summarize");
+
 const submitButton = document.getElementById("submit-button");
+
 const summarizedTextArea = document.getElementById("summary");
 
 var button = document.getElementById("myButton");
 
 textArea.addEventListener("input", verifyTextLength);
+
 submitButton.addEventListener("click", submitData);
 
 submitButton.disabled = true;
@@ -14,7 +17,8 @@ function verifyTextLength(e) {
 
     if(textArea.value.length > 200 && textArea.value.length < 100000){
         submitButton.disabled=false;
-    }else{
+    }
+    else{
         submitButton.disabled=true;
     }
 }
@@ -49,3 +53,37 @@ function submitData(e) {
             console.log(error.message);
         });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
