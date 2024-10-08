@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3002;
 const summarizeText = require('./summarize.js');
 
 
@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.post('/summarize', (req, res) => {
+  console.log("redirected to summarize endpoint")
   const text = req.body.text_to_summarize;
 
   summarizeText(text)

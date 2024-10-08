@@ -20,6 +20,7 @@ function verifyTextLength(e) {
 }
 
 function submitData(e) {
+    console.log("submit function")
     submitButton.classList.add("submit-button--loading");
 
     const text_to_summarize = textArea.value;
@@ -38,7 +39,7 @@ function submitData(e) {
     redirect: "follow"
     };
 
-    fetch('/summarize', requestOptions
+    fetch('/summarize', requestOptions)
         .then(response => response.text())
         .then(summary => {
             summarizedTextArea.value = summary;
@@ -46,6 +47,5 @@ function submitData(e) {
             
         }).catch(error=>{
             console.log(error.message);
-        })
-    )
+        });
 }
